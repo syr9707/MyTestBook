@@ -8,3 +8,16 @@
   * 게시글 삭제
 
 API 만들기.
+
+
+## API
+* 게시글 생성 
+  * POST : /api/v1/posts
+* 게시글 조회
+  * GET : /api/v1/posts/{id}
+* 게시글 수정
+  * PUT : /api/v1/posts/{id}
+* 게시글 삭제
+  * DELETE : /api/v1/posts/{id}
+
+
