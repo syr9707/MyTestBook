@@ -2,8 +2,8 @@ package com.testbook.web;
 
 import com.testbook.domain.posts.Posts;
 import com.testbook.domain.posts.PostsRepository;
-import com.testbook.web.dto.PostsSaveRequestDto;
-import com.testbook.web.dto.PostsUpdateRequestDto;
+import com.testbook.web.dto.posts.PostsSaveRequestDto;
+import com.testbook.web.dto.posts.PostsUpdateRequestDto;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,6 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class PostsApiControllerTest {

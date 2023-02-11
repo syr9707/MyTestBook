@@ -1,4 +1,4 @@
-package com.testbook.web.dto;
+package com.testbook.web.dto.posts;
 
 import lombok.Builder;
 import lombok.Getter;

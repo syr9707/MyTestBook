@@ -2,10 +2,10 @@ package com.testbook.service.posts;
 
 import com.testbook.domain.posts.Posts;
 import com.testbook.domain.posts.PostsRepository;
-import com.testbook.web.dto.PostsListResponseDto;
-import com.testbook.web.dto.PostsResponseDto;
-import com.testbook.web.dto.PostsSaveRequestDto;
-import com.testbook.web.dto.PostsUpdateRequestDto;
+import com.testbook.web.dto.posts.PostsListResponseDto;
+import com.testbook.web.dto.posts.PostsResponseDto;
+import com.testbook.web.dto.posts.PostsSaveRequestDto;
+import com.testbook.web.dto.posts.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
