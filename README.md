@@ -19,12 +19,14 @@
   * 게시글 수정
   * 게시글 삭제
 
+
 * 게시물 댓글 기능
   * 댓글 등록
   * 댓글 수정
   * 댓글 삭제
   * 한 작성자가 여러 게시물을 올릴 수 있음
   * 작성자가 올린 게시물 모아보기
+
 
 * Spring Security를 이용한 회원가입
   * 구글로 회원가입
@@ -44,5 +46,29 @@
   * PUT : /api/v1/posts/{id}
 * 게시글 삭제
   * DELETE : /api/v1/posts/{id}
+
+<br>
+
+* 회원 가입
+  * POST : /api/v1/user
+* 회원 정보 전체 조회 (관리자 페이지)
+  * GET : /api/v1/user/all
+* 특정 회원 정보 조회 (마이페이지)
+  * GET : /api/v1/user/{id}
+* 회원 정보 수정
+  * PUT : /api/v1/user/{id}
+* 회원 탈퇴
+  * DELETE : /api/v1/user/{id}
+
+<br>
+
+* 댓글 작성
+  * POST : /api/v1/posts/{postId}/comments/{userId}
+    * 예비...
+    * SpringSecurity 인증 안 하고 Postman 실험할 수 있는 방법 없을까...
+    * 뷰페이지 안 만들고 API 호출 테스트만 하고 싶은데ㅠ
+
+
+
 
 
