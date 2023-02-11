@@ -2,6 +2,7 @@ package com.testbook.domain.posts;
 
 import com.testbook.domain.BaseTimeEntity;
 import com.testbook.domain.comments.Comments;
+import com.testbook.domain.user.User;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,6 +26,10 @@ public class Posts extends BaseTimeEntity {
     private String content;
 
     private String author;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @OneToMany(mappedBy = "posts", cascade = CascadeType.REMOVE)
     private List<Comments> commentsList;
