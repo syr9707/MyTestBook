@@ -35,11 +35,15 @@ public class User extends BaseTimeEntity {
     @OneToMany(mappedBy = "user")
     private List<Comments> commentsList;
 
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
     @Builder
-    public User(String name, String email, String password) {
+    public User(String name, String email, String password, Role role) {
         this.name = name;
         this.email = email;
         this.password = password;
+        this.role = role.ADMIN;
     }
 
     public void update(String name, String email) {

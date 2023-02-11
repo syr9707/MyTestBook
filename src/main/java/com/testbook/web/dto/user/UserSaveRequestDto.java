@@ -1,5 +1,6 @@
 package com.testbook.web.dto.user;
 
+import com.testbook.domain.user.Role;
 import com.testbook.domain.user.User;
 import lombok.Builder;
 import lombok.Getter;
@@ -13,11 +14,14 @@ public class UserSaveRequestDto {
     private String email;
     private String password;
 
+    private Role role;
+
     @Builder
-    public UserSaveRequestDto(String name, String email, String password) {
+    public UserSaveRequestDto(String name, String email, String password, Role role) {
         this.name = name;
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 
     public User toEntity() {
@@ -25,6 +29,7 @@ public class UserSaveRequestDto {
                 .name(name)
                 .email(email)
                 .password(password)
+                .role(role)
                 .build();
     }
 
