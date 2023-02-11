@@ -17,6 +17,7 @@ public class Posts extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "posts_id")
     private Long id;
 
     @Column(length = 500, nullable = false)
@@ -33,6 +34,8 @@ public class Posts extends BaseTimeEntity {
 
     @OneToMany(mappedBy = "posts", cascade = CascadeType.REMOVE)
     private List<Comments> commentsList;
+
+//    private String author = user.getName();
 
     @Builder
     public Posts(String title, String content, String author) {

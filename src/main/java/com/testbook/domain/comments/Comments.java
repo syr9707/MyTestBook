@@ -16,12 +16,12 @@ public class Comments extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "comments_id")
     private Long id;
 
     @Column(columnDefinition = "TEXT", nullable = false)
     private String comment;
 
-    private String author; // 댓글 작성자
 
     @ManyToOne
     @JoinColumn(name = "posts_id")
@@ -31,10 +31,13 @@ public class Comments extends BaseTimeEntity {
     @JoinColumn(name = "user_id")
     private User user; // 댓글 작성자
 
+//    private String author = user.getName(); // 댓글 작성자
+
     @Builder
-    public Comments(String comment, String author) {
+    public Comments(String comment, User user, Posts posts) {
         this.comment = comment;
-        this.author = author;
+        this.user = user;
+        this.posts = posts;
     }
 
     public void update(String comment) {

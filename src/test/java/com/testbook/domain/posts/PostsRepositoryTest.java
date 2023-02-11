@@ -1,5 +1,7 @@
 package com.testbook.domain.posts;
 
+import com.testbook.domain.user.User;
+import com.testbook.domain.user.UserRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,9 @@ class PostsRepositoryTest {
 
     @Autowired
     PostsRepository postsRepository;
+
+    @Autowired
+    UserRepository userRepository;
 
     @AfterEach
     public void cleanUp() {
@@ -62,6 +67,26 @@ class PostsRepositoryTest {
 
         assertThat(posts.getCreatedDate().isAfter(now));
         assertThat(posts.getModifiedDate().isAfter(now));
+    }
+
+    @Test
+    public void 게시글_회원_연관관계() {
+        // given
+        String name = "ummchicken";
+        String email = "aaa@test.com";
+        String password = "12345678";
+
+        userRepository.save(User.builder()
+                .name(name)
+                .email(email)
+                .password(password)
+                .build());
+
+        // when
+        List<User> userList = userRepository.findAll();
+
+        // then
+        User user = userList.get(0);
     }
 
 }

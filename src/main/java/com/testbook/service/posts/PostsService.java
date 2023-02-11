@@ -2,6 +2,8 @@ package com.testbook.service.posts;
 
 import com.testbook.domain.posts.Posts;
 import com.testbook.domain.posts.PostsRepository;
+import com.testbook.domain.user.User;
+import com.testbook.domain.user.UserRepository;
 import com.testbook.web.dto.posts.PostsListResponseDto;
 import com.testbook.web.dto.posts.PostsResponseDto;
 import com.testbook.web.dto.posts.PostsSaveRequestDto;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
@@ -18,6 +21,7 @@ import java.util.stream.Collectors;
 public class PostsService {
 
     private final PostsRepository postsRepository;
+    private final UserRepository userRepository;
 
     @Transactional
     public Long save(PostsSaveRequestDto postsSaveRequestDto) {
