@@ -72,12 +72,12 @@ class PostsRepositoryTest {
     @Test
     public void 게시글_회원_연관관계() {
         // given
-        String name = "ummchicken";
+        String username = "ummchicken";
         String email = "aaa@test.com";
         String password = "12345678";
 
         userRepository.save(User.builder()
-                .name(name)
+                .username(username)
                 .email(email)
                 .password(password)
                 .build());
