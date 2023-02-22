@@ -23,12 +23,12 @@ class UserRepositoryTest {
     @Test
     public void 회원저장_불러오기() {
         // given
-        String name = "ummchicken";
+        String username = "ummchicken";
         String email = "aaa@test.com";
         String password = "12345678";
 
         userRepository.save(User.builder()
-                .name(name)
+                .username(username)
                 .email(email)
                 .password(password)
                 .build());
@@ -38,7 +38,7 @@ class UserRepositoryTest {
 
         // then
         User user = userList.get(0);
-        assertThat(user.getName()).isEqualTo(name);
+        assertThat(user.getUsername()).isEqualTo(username);
         assertThat(user.getEmail()).isEqualTo(email);
         assertThat(user.getPassword()).isEqualTo(password);
     }
