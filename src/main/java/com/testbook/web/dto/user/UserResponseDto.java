@@ -7,13 +7,13 @@ import lombok.Getter;
 public class UserResponseDto {
 
     private Long id;
-    private String name;
+    private String username;
     private String email;
     private String password;
 
     public UserResponseDto(User entity) {
         this.id = entity.getId();
-        this.name = entity.getName();
+        this.username = entity.getUsername();
         this.email = entity.getEmail();
         this.password = entity.getPassword();
     }

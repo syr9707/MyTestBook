@@ -6,6 +6,7 @@ import com.testbook.domain.posts.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
 import java.util.List;
@@ -21,11 +22,14 @@ public class User extends BaseTimeEntity {
     @Column(name = "user_id")
     private Long id;
 
-    @Column(nullable = false)
-    private String name;
+    @Column(nullable = false, length = 30, unique = true)
+    private String username; // 아이디
 
     @Column(nullable = false)
     private String email;
+
+    @Column(nullable = false)
+    private String nickname;
 
     private String password;
 
@@ -39,16 +43,22 @@ public class User extends BaseTimeEntity {
     private Role role;
 
     @Builder
-    public User(String name, String email, String password, Role role) {
-        this.name = name;
+    public User(String username, String email, String password, Role role, String nickname) {
+        this.username = username;
         this.email = email;
         this.password = password;
         this.role = role.ADMIN;
+        this.nickname = nickname;
     }
 
-    public void update(String name, String email) {
-        this.name = name;
-        this.email = email;
+    // 회원 정보 수정
+    public void update(String nickname, String password) {
+        this.nickname = nickname;
+        this.password = password;
+    }
+
+    public String getRoleValue() {
+        return this.role.getValue();
     }
 
 }

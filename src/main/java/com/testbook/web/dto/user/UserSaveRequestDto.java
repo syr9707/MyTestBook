@@ -5,20 +5,21 @@ import com.testbook.domain.user.User;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Getter
 @NoArgsConstructor
 public class UserSaveRequestDto {
 
-    private String name;
+    private String username;
     private String email;
     private String password;
 
     private Role role;
 
     @Builder
-    public UserSaveRequestDto(String name, String email, String password, Role role) {
-        this.name = name;
+    public UserSaveRequestDto(String username, String email, String password, Role role) {
+        this.username = username;
         this.email = email;
         this.password = password;
         this.role = role;
@@ -26,7 +27,7 @@ public class UserSaveRequestDto {
 
     public User toEntity() {
         return User.builder()
-                .name(name)
+                .username(username)
                 .email(email)
                 .password(password)
                 .role(role)
