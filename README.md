@@ -3,6 +3,14 @@
 
 <br>
 
+## 🛠️ 사용 기술
+* Java
+* Spring Boot
+* Spring Security
+* Spring Data JPA
+
+<br>
+
 ## 📌 프로젝트 목표
 * API 동작 과정 완벽히 파악하기
   * View 만들까 말까 고민 중...
