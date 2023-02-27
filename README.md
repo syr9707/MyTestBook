@@ -76,10 +76,15 @@
 <br>
 
 * 댓글 작성
-  * POST : /api/v1/posts/{postId}/comments/{userId}
-    * 예비...
-    * SpringSecurity 인증 안 하고 Postman 실험할 수 있는 방법 없을까...
-    * 뷰페이지 안 만들고 API 호출 테스트만 하고 싶은데ㅠ
+  * POST : /api/v1/posts/{postId}/comments
+* 댓글 조회
+  * GET : /api/v1/posts/{postId}/comments/{commentId}
+* 댓글 수정
+  * PUT : /api/v1/posts/{postId}/comments/{commentId}
+* 댓글 삭제
+  * DELETE : /api/v1/posts/{postId}/comments/{commentId}
+* 게시글의 댓글 목록 조회
+  * POST : /api/v1/posts/{id}
 
 <br>
 
