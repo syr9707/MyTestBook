@@ -14,12 +14,11 @@ public class CommentsApiController {
 
     private final CommentsService commentsService;
 
-    @PostMapping("/api/v1/posts/{postId}/comments/{userId}")
+    @PostMapping("/api/v1/posts/{postId}/comments")
     public Long save(@RequestBody CommentsSaveRequestDto commentsSaveRequestDto,
-                     @PathVariable("postId") Long postId,
-                     @PathVariable("userId") Long userId) {
+                     @PathVariable("postId") Long postId) {
 
-        return commentsService.save(commentsSaveRequestDto, userId, postId);
+        return commentsService.save(commentsSaveRequestDto,  postId);
     }
 
 //    @PutMapping("/api/v1/posts/{postId}/comments/{userId}")

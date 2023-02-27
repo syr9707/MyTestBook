@@ -12,27 +12,27 @@ import lombok.NoArgsConstructor;
 public class CommentsSaveRequestDto {
 
     private String comment;
-    private User user;
+//    private User user;
     private Posts posts;
 
     @Builder
-    public CommentsSaveRequestDto(String comment, User user, Posts posts) {
+    public CommentsSaveRequestDto(String comment, Posts posts) {
         this.comment = comment;
-        this.user = user;
+//        this.user = user;
         this.posts = posts;
     }
 
     public Comments toEntity() {
         return Comments.builder()
                 .comment(comment)
-                .user(user)
+//                .user(user)
                 .posts(posts)
                 .build();
     }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
 
     public void setPosts(Posts posts) {
         this.posts = posts;

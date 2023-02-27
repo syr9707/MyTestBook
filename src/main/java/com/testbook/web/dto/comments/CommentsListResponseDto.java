@@ -9,14 +9,14 @@ import java.time.LocalDateTime;
 public class CommentsListResponseDto {
 
     private Long id;
-    private Long userId;
+//    private Long userId;
     private Long postsId;
     private String comment;
     private LocalDateTime modifiedDate;
 
     public CommentsListResponseDto(Comments entity) {
         this.id = entity.getId();
-        this.userId = entity.getUser().getId();
+//        this.userId = entity.getUser().getId();
         this.postsId = entity.getPosts().getId();
         this.comment = entity.getComment();
         this.modifiedDate = entity.getModifiedDate();

@@ -6,7 +6,6 @@ import com.testbook.domain.posts.Posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
 import java.util.List;
@@ -33,11 +32,11 @@ public class User extends BaseTimeEntity {
 
     private String password;
 
-    @OneToMany(mappedBy = "user")
-    private List<Posts> postsList;
+//    @OneToMany(mappedBy = "user")
+//    private List<Posts> postsList;
 
-    @OneToMany(mappedBy = "user")
-    private List<Comments> commentsList;
+//    @OneToMany(mappedBy = "user")
+//    private List<Comments> commentsList;
 
     @Enumerated(EnumType.STRING)
     private Role role;

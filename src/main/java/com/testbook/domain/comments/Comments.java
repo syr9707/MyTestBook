@@ -27,16 +27,15 @@ public class Comments extends BaseTimeEntity {
     @JoinColumn(name = "posts_id")
     private Posts posts;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user; // 댓글 작성자
+//    @ManyToOne
+//    @JoinColumn(name = "user_id")
+//    private User user; // 댓글 작성자
 
 //    private String author = user.getName(); // 댓글 작성자
 
     @Builder
-    public Comments(String comment, User user, Posts posts) {
+    public Comments(String comment,  Posts posts) {
         this.comment = comment;
-        this.user = user;
         this.posts = posts;
     }
 

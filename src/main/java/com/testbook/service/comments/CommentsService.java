@@ -27,15 +27,15 @@ public class CommentsService {
     UserRepository userRepository;
 
     @Transactional
-    public Long save(CommentsSaveRequestDto commentsSaveRequestDto, Long userId, Long postId) {
+    public Long save(CommentsSaveRequestDto commentsSaveRequestDto, Long postId) {
         // 엔티티 조회
-        User user = userRepository.findById(userId)
-                .orElseThrow(() -> new IllegalArgumentException("해당 회원 없습니다. userId = " + userId));
+//        User user = userRepository.findById(userId)
+//                .orElseThrow(() -> new IllegalArgumentException("해당 회원 없습니다. userId = " + userId));
 
         Posts posts = postsRepository.findById(postId)
                 .orElseThrow(() -> new IllegalArgumentException("해당 게시글이 없습니다. postId = " + postId));
 
-        commentsSaveRequestDto.setUser(user);
+//        commentsSaveRequestDto.setUser(user);
         commentsSaveRequestDto.setPosts(posts);
 
         Comments comments = commentsSaveRequestDto.toEntity();
